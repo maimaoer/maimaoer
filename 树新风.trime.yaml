@@ -1,7 +1,7 @@
 # Trime default style settings
 # encoding: utf-8
 
-config_version: "4.3"    #版本号
+config_version: "4.4"    #版本号
 name: "树新风"        #方案名称
 author: "讲文明"       #作者信息
 
@@ -89,9 +89,9 @@ fallback_colors:   #后备配色
 style:
 #候选
   candidate_text_size: 20  #候选字号
-  candidate_padding: 13  #候选项内边距
+  candidate_padding: 14  #候选项内边距
   candidate_spacing: 1    #候选间隔
-  candidate_view_height: 27 #候选区高度
+  candidate_view_height: 26 #候选区高度
   candidate_corner_radius: 10 #候选背景块圆角半径
   candidate_text_vertical_bias: 0.4 #候选垂直偏移位置（仅 overlay 模式使用，需要间隙空间足够，范围 0.0~1.0，0.0=top，0.5=center，1.0=bottom）
 #提示
@@ -117,9 +117,9 @@ style:
   key_press_offset_x: 2 #按下横向偏移
   key_press_offset_y: 2 #按下纵向偏移
 #键盘
-  reset_ascii_mode: false #显示键盘时重置为中文状态
-  horizontal_gap: 2 #按键竖缝
-  vertical_gap: 3 #按键横缝
+  reset_ascii_mode_on_focus_change: false #焦点变更弹起输入法软键盘时，重置 ascii_mode
+  horizontal_gap: 2 #按键间距
+  vertical_gap: 3 #按键行距
   keyboard_height: 250 #锁定键盘高度
   keyboard_height_land: 220 #锁定横屏键盘高度
   keyboard_padding_bottom: 15  #竖屏底边距
@@ -420,7 +420,11 @@ preset_keyboards:
       "keys/@11/key_text_size": ～
       "keys/@12/key_text_size": ～
       "keys/@13/key_text_size": ～
-      "keys/@4/click": Shift_L
+      "keys/@4": 
+        click: Shift_L
+        long_click: Shift_L
+        label_symbol: " "
+        width: 17
       "keys/@15":
         click: Keyboard_default
         width: 17
@@ -434,6 +438,7 @@ preset_keyboards:
         click: '0'
         popup: ["{}{Left}", "(){Left}", "[]{Left}"]
         key_text_size": ～
+        swipe_down: space
       "keys/@18":
         click: '.'
 
